@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:prueba_tienda_deportiva_flutter/utilies/product_model.dart';
 
 class DetailProductScreen extends StatefulWidget {
   static String id = 'detail_screen';
+  final ProductModel product;
 
-  const DetailProductScreen({Key key}) : super(key: key);
+  const DetailProductScreen({Key key, this.product}) : super(key: key);
 
   @override
   _DetailProductScreenState createState() => _DetailProductScreenState();
@@ -75,7 +77,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
         children: [
           Expanded(
             child: Image.network(
-              'https://definicion.de/wp-content/uploads/2009/06/producto.jpg',
+              widget.product.image,
               fit: BoxFit.cover,
             ),
           ),
@@ -86,14 +88,14 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'Descripcion',
+                    widget.product.description,
                     style: Theme.of(context).textTheme.headline5,
                   ),
                   SizedBox(
                     height: 20,
                   ),
                   Text(
-                    'NameProduct',
+                    widget.product.name,
                     style: Theme.of(context).textTheme.bodyText1,
                     textAlign: TextAlign.justify,
                   ),
@@ -101,7 +103,7 @@ class _DetailProductScreenState extends State<DetailProductScreen> {
                     height: 20,
                   ),
                   Text(
-                    'Cantidad en Stock 100',
+                    'Cantidad en Stock ${widget.product.countStock}',
                     style: Theme.of(context).textTheme.bodyText1,
                     textAlign: TextAlign.justify,
                   ),

@@ -1,10 +1,17 @@
 class ProductModel {
-  final String nameProduct;
-  final String descriptionProduct;
-  final String imageProduct;
-  final int productStock;
+  final String name;
+  final String description;
+  final String image;
+  final int countStock;
+  final bool booked;
 
-  ProductModel(this.productStock, {this.imageProduct, this.nameProduct, this.descriptionProduct});
+  ProductModel(
+      {this.countStock,
+      this.image,
+      this.name,
+      this.description,
+      this.booked = false});
+
+
 }
-
 

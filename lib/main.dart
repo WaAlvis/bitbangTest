@@ -14,10 +14,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomePage.id,
       routes: {
         HomePage.id: (context) => HomePage(),
-        DetailProductScreen.id: (contex) => DetailProductScreen(),
-        // TestPostPage.id: (context) => TestPostPage(), //Page for POST Example
-        // TestGetPage.id: (context) => TestGetPage(), //Page for GET Example
-        // LoadingScreen.id:(context)=>LoadingScreen(),
+        DetailProductScreen.id: (context) => DetailProductScreen(),
+
       },
     );
   }
